@@ -2,4 +2,4 @@ spring:
   application:
     name: notification-service
   config:
-    import: optional:configserver:https://localhost:8888
+    import: optional:configserver:http://localhost:8888

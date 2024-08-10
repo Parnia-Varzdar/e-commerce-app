@@ -3,10 +3,10 @@ server:
 spring:
   data:
     mongodb:
-      username: alibou
-      password: alibou
+      username: root
+      password: 123456
       host: localhost
-      port: 27017
+      port: 27020
       database: notification
       authentication-database: admin
   kafka:
@@ -18,12 +18,12 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: '*'
-        spring.json.type.mapping: orderConfirmation:com.alibou.ecommerce.kafka.order.OrderConfirmation,paymentConfirmation:com.alibou.ecommerce.kafka.payment.PaymentConfirmation
+        spring.json.type.mapping: orderConfirmation:com.parnia.ecommerce.kafka.order.OrderConfirmation,paymentConfirmation:com.parnia.ecommerce.kafka.payment.PaymentConfirmation
   mail:
     host: localhost
-    port: 1025
-    username: alibou
-    password: alibou
+    port: 11026
+    username: root
+    password: 123456
     properties:
       mail:
         smtp:

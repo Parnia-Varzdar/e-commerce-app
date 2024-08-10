@@ -3,9 +3,9 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/order
-    username: alibou
-    password: alibou
+    url: jdbc:postgresql://localhost:55432/apporder
+    username: root
+    password: 123456
   jpa:
     hibernate:
       ddl-auto: create

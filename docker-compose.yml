@@ -33,19 +33,19 @@ services:
     image: mongo
     container_name: app-mongodb
     ports:
-      - 277017:27017
+      - 27020:27017
     volumes:
       - mongo:/data11
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=123456
-  #
+
   mongo-express:
     image: mongo-express
     container_name: app-mongo_express
     restart: always
     ports:
-      - 88081:8081
+      - 8073:8081
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=root
       - ME_CONFIG_MONGODB_ADMINPASSWORD=123456
@@ -94,6 +94,19 @@ services:
       - "9411:9411"
     networks:
       - app-net
+
+  keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:24.0.2
+    ports:
+      - 9090:8080
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    networks:
+      - app-net
+    command:
+      - "start-dev"
 
 networks:
   app-net:
